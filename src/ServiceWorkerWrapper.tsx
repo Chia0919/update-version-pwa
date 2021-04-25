@@ -16,7 +16,7 @@ const ServiceWorkerWrapper: FC = () => {
   useEffect(() => {
     serviceWorker.register({ onUpdate: onSWUpdate });
   }, []);
-
+  console.log(showReload, waitingWorker);
   const reloadPage = () => {
     waitingWorker?.postMessage({ type: 'SKIP_WAITING' });
     setShowReload(false);
